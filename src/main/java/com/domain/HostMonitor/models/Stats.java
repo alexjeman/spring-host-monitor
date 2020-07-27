@@ -14,7 +14,7 @@ public class Stats {
     private long id;
 
     @Column(name = "code")
-    private String code;
+    private int code;
 
     @Column(name = "response_time")
     private int responsetime;
@@ -31,7 +31,7 @@ public class Stats {
         super();
     }
 
-    public Stats(String code, int responsetime, Date time, Host host) {
+    public Stats(int code, int responsetime, Date time, Host host) {
         this.code = code;
         this.responsetime = responsetime;
         this.time = time;
@@ -46,11 +46,11 @@ public class Stats {
         this.id = id;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 

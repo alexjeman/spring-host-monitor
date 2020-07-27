@@ -17,6 +17,9 @@ public class Host {
     @Column(name = "url")
     private String url;
 
+    @Column(name = "mute")
+    private Boolean mute = false;
+
     @ManyToOne
     @JoinColumn(name = "apikey_id")
     private ApiKey apikey;
@@ -29,10 +32,12 @@ public class Host {
         super();
     }
 
-    public Host(String hostname, String url, ApiKey apikey) {
+    public Host(String hostname, String url, Boolean mute, ApiKey apikey, List<Stats> stats) {
         this.hostname = hostname;
         this.url = url;
+        this.mute = mute;
         this.apikey = apikey;
+        this.stats = stats;
     }
 
     public long getId() {
@@ -65,5 +70,21 @@ public class Host {
 
     public void setApikey(ApiKey apikey) {
         this.apikey = apikey;
+    }
+
+    public Boolean getMute() {
+        return mute;
+    }
+
+    public void setMute(Boolean mute) {
+        this.mute = mute;
+    }
+
+    public List<Stats> getStats() {
+        return stats;
+    }
+
+    public void setStats(List<Stats> stats) {
+        this.stats = stats;
     }
 }

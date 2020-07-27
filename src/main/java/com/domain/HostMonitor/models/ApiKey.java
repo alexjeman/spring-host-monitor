@@ -23,16 +23,16 @@ public class ApiKey {
 
     @Hidden
     @OneToMany(mappedBy = "apikey")
-    private List<Host> hosts;
+    private List<Host> host;
 
     public ApiKey() {
         super();
     }
 
-    public ApiKey(String keyhash, String email, List<Host> hosts) {
+    public ApiKey(String keyhash, String email, List<Host> host) {
         this.keyhash = keyhash;
         this.email = email;
-        this.hosts = hosts;
+        this.host = host;
     }
 
     public long getId() {
@@ -59,11 +59,11 @@ public class ApiKey {
         this.email = email;
     }
 
-    public List<Host> getHosts() {
-        return hosts;
+    public List<Host> getHost() {
+        return host;
     }
 
-    public void setHosts(List<Host> hosts) {
-        this.hosts = hosts;
+    public void setHost(List<Host> host) {
+        this.host = host;
     }
 }
