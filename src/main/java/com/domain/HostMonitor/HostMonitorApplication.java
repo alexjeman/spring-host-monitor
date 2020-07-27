@@ -20,7 +20,7 @@ public class HostMonitorApplication {
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
                 .group("")
-                .pathsToMatch("/api/v1/**")
+                .pathsToMatch("/**")
                 .build();
     }
 

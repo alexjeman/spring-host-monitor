@@ -12,7 +12,7 @@ public class Host {
     private long id;
 
     @Column(name = "host_name")
-    private String host_name;
+    private String hostname;
 
     @Column(name = "url")
     private String url;
@@ -29,8 +29,8 @@ public class Host {
         super();
     }
 
-    public Host(String host_name, String url, ApiKey apikey) {
-        this.host_name = host_name;
+    public Host(String hostname, String url, ApiKey apikey) {
+        this.hostname = hostname;
         this.url = url;
         this.apikey = apikey;
     }
@@ -43,12 +43,12 @@ public class Host {
         this.id = id;
     }
 
-    public String getHost_name() {
-        return host_name;
+    public String getHostname() {
+        return hostname;
     }
 
-    public void setHost_name(String host_name) {
-        this.host_name = host_name;
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
     }
 
     public String getUrl() {

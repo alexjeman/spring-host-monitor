@@ -17,7 +17,7 @@ public class Stats {
     private String code;
 
     @Column(name = "response_time")
-    private int response_time;
+    private int responsetime;
 
     @CreatedDate
     @Column(name = "time")
@@ -31,9 +31,9 @@ public class Stats {
         super();
     }
 
-    public Stats(String code, int response_time, Date time, Host host) {
+    public Stats(String code, int responsetime, Date time, Host host) {
         this.code = code;
-        this.response_time = response_time;
+        this.responsetime = responsetime;
         this.time = time;
         this.host = host;
     }
@@ -54,12 +54,12 @@ public class Stats {
         this.code = code;
     }
 
-    public int getResponse_time() {
-        return response_time;
+    public int getResponsetime() {
+        return responsetime;
     }
 
-    public void setResponse_time(int response_time) {
-        this.response_time = response_time;
+    public void setResponsetime(int responsetime) {
+        this.responsetime = responsetime;
     }
 
     public Date getTime() {

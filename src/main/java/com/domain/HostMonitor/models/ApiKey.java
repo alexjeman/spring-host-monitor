@@ -1,5 +1,7 @@
 package com.domain.HostMonitor.models;
 
+import io.swagger.v3.oas.annotations.Hidden;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -7,16 +9,19 @@ import java.util.List;
 @Table(name = "apikey")
 public class ApiKey {
 
+    @Hidden
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Hidden
     @Column(name = "key_hash")
-    private String key_hash;
+    private String keyhash;
 
     @Column(name = "email")
     private String email;
 
+    @Hidden
     @OneToMany(mappedBy = "apikey")
     private List<Host> hosts;
 
@@ -24,8 +29,8 @@ public class ApiKey {
         super();
     }
 
-    public ApiKey(String key_hash, String email, List<Host> hosts) {
-        this.key_hash = key_hash;
+    public ApiKey(String keyhash, String email, List<Host> hosts) {
+        this.keyhash = keyhash;
         this.email = email;
         this.hosts = hosts;
     }
@@ -38,12 +43,12 @@ public class ApiKey {
         this.id = id;
     }
 
-    public String getKey_hash() {
-        return key_hash;
+    public String getKeyhash() {
+        return keyhash;
     }
 
-    public void setKey_hash(String key_hash) {
-        this.key_hash = key_hash;
+    public void setKeyhash(String keyhash) {
+        this.keyhash = keyhash;
     }
 
     public String getEmail() {

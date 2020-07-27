@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ApiKeyRepository extends JpaRepository<ApiKey, Long> {
-
+    ApiKey findBykeyhash(String keyhash);
 }
