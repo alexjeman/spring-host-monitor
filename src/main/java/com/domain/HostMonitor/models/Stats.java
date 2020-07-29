@@ -1,5 +1,6 @@
 package com.domain.HostMonitor.models;
 
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import java.util.Date;
 @Table(name = "stats")
 public class Stats {
 
+    @Hidden
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -23,6 +25,7 @@ public class Stats {
     @Column(name = "time")
     private Date time;
 
+    @Hidden
     @ManyToOne
     @JoinColumn(name = "host_id")
     private Host host;

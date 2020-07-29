@@ -24,7 +24,8 @@ public class Host {
     @JoinColumn(name = "apikey_id")
     private ApiKey apikey;
 
-    @OneToMany(mappedBy = "host")
+    @OneToMany(fetch=FetchType.EAGER)
+    @JoinColumn(name = "id")
     private List<Stats> stats;
 
 

@@ -22,7 +22,8 @@ public class ApiKey {
     private String email;
 
     @Hidden
-    @OneToMany(mappedBy = "apikey")
+    @OneToMany(fetch=FetchType.EAGER)
+    @JoinColumn(name = "id")
     private List<Host> host;
 
     public ApiKey() {
